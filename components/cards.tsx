@@ -7,11 +7,11 @@ import { Button } from "@/components/ui/button";
 import type { User } from "@/types/user";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 
-interface CardDemo3Props {
+interface CardProps {
     user: User;
 }
 
-export function CardDemo3({ user }: CardDemo3Props) {
+export function Cards({ user }: CardProps) {
     return (
         <HoverBorderGradient className="rounded-xl">
             <Card className="w-full overflow-hidden transition-all border-none h-full">
@@ -35,7 +35,6 @@ export function CardDemo3({ user }: CardDemo3Props) {
                 </CardHeader>
                 <CardContent className="pt-6">
                     <div className="grid gap-4 text-sm">
-                        {/* Personal Info Section */}
                         <div className="space-y-3">
                             <div className="flex items-center gap-2">
                                 <Mail className="h-4 w-4 text-primary" />
@@ -64,7 +63,6 @@ export function CardDemo3({ user }: CardDemo3Props) {
                             </div>
                         </div>
 
-                        {/* Company Info Section */}
                         <div className="pt-2 border-t border-border">
                             <div className="flex items-start gap-2 mt-2">
                                 <Briefcase className="h-4 w-4 text-primary mt-1" />

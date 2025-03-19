@@ -11,6 +11,7 @@ import { useDebounce } from "@/hooks/use-debounce"
 import { fetchUsers } from "@/utils/api"
 import type { User } from "@/types/user"
 import { filterUsers } from "@/utils/trie"
+import { Cards } from "@/components/cards"
 
 export default function UserSearch() {
   const [users, setUsers] = useState<User[]>([])
@@ -96,15 +97,9 @@ export default function UserSearch() {
       {filteredUsers.length === 0 ? (
         <p className="text-center py-8 text-muted-foreground">No users found matching "{searchTerm}"</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredUsers.map((user) => (
-            <Card key={user.id}>
-              <CardContent className="p-6">
-                <h3 className="font-medium text-lg">{user.name}</h3>
-                <p className="text-muted-foreground">{user.email}</p>
-                <p className="text-sm mt-2">{user.company.name}</p>
-              </CardContent>
-            </Card>
+            <Cards key={user.id} user={user} />
           ))}
         </div>
       )}
