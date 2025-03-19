@@ -12,7 +12,7 @@ import { useState, useEffect } from "react"
 import { AuroraBackground } from "@/components/ui/aurora-background"
 
 
-export default function Home() {
+export default function Card() {
   const [year, setYear] = useState(2024)
 
   useEffect(() => {
