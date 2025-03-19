@@ -38,7 +38,7 @@ export function Cards({ user }: CardProps) {
                         <div className="space-y-3">
                             <div className="flex items-center gap-2">
                                 <Mail className="h-4 w-4 text-primary" />
-                                <a href={`mailto:${user.email}`} className="text-foreground hover:text-primary hover:underline transition-colors">
+                                <a href={`mailto:${user.email}`} classgit Name="text-foreground hover:text-primary hover:underline transition-colors">
                                     {user.email}
                                 </a>
                             </div>
