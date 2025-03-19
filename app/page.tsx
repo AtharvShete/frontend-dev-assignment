@@ -9,9 +9,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { TabsDemo } from "@/components/tabs-demo"
 import { useState, useEffect } from "react"
-import { TypewriterEffect, TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { AuroraBackground } from "@/components/ui/aurora-background"
+
 
 export default function Home() {
   const [year, setYear] = useState(2024)
@@ -20,44 +19,6 @@ export default function Home() {
     setYear(new Date().getFullYear())
   }, [])
 
-  const words = [
-    {
-      text: "Build",
-    },
-    {
-      text: "awesome",
-      className: "text-blue-500",
-    },
-    {
-      text: "websites",
-    },
-    {
-      text: "with",
-    },
-    {
-      text: "our",
-    },
-    {
-      text: "platform.",
-      className: "text-blue-500",
-    },
-  ];
-
-  const wordsSmooth = [
-    {
-      text: "Your",
-    },
-    {
-      text: "journey",
-      className: "text-blue-500",
-    },
-    {
-      text: "starts",
-    },
-    {
-      text: "here.",
-    },
-  ];
 
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
@@ -75,7 +36,9 @@ export default function Home() {
         </header>
 
         <main>
-          <HeroSection />
+          <AuroraBackground>
+            <HeroSection />
+          </AuroraBackground>
 
           <section id="services" className="py-20 bg-muted/50">
             <ServiceCards />

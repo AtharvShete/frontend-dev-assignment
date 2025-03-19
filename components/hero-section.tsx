@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { TypewriterEffect, TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import Link from "next/link";
+import { HoverBorderGradient } from "./ui/hover-border-gradient";
 
 const HeroSection = () => {
   const words = [
@@ -38,12 +39,12 @@ const HeroSection = () => {
   ];
 
   return (
-    <div className="py-20 md:py-32 flex flex-col items-center justify-center text-center px-4 bg-gradient-to-b from-background to-muted/50">
-      <div className="mb-8">
+    <div className="py-20 md:py-32 flex flex-col items-center justify-center text-center px-4 from-background to-muted/50">
+      <div className="mb-4">
         <TypewriterEffect words={words} />
       </div>
 
-      <div className="max-w-3xl mx-auto mb-8">
+      <div className="max-w-3xl mx-auto mb-2">
         <TypewriterEffectSmooth words={wordsSmooth} className="mb-8" />
 
         <p className="text-muted-foreground text-lg mb-8">
@@ -53,10 +54,10 @@ const HeroSection = () => {
       </div>
 
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Button size="lg" asChild>
+        <HoverBorderGradient>
           <Link href="#contact">Get Started</Link>
-        </Button>
-        <Button variant="outline" size="lg" asChild>
+        </HoverBorderGradient>
+        <Button size="lg" asChild>
           <Link href="#services">Our Services</Link>
         </Button>
       </div>
